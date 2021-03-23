@@ -1,20 +1,26 @@
-import MyFirstComponent from './components/MyFirstComponent';
+// import MyFirstComponent from './components/MyFirstComponent';
 // import MySecondComponent from './components/MySecondComponent';
-import MyThirdComponent from './components/MyThirdComponent';
+// import MyThirdComponent from './components/MyThirdComponent';
+import UserDetails from './components/UserDetails';
 
 const App = () => {
   const user = {
-    name: 'Peter',
+    firstName: 'Bobby',
+    lastName: 'Ivanov',
+    age: 15,
+    sex: 'male',
   };
 
   return (
     <div className="App">
       <h1>Hello from react</h1>
 
-      <MyFirstComponent user={user} x={73} />
+      <UserDetails user={user} />
+
+      {/* <MyFirstComponent user={user} x={73} /> */}
       {/* <MySecondComponent user={user} /> */}
 
-      <MyThirdComponent>
+      {/* <MyThirdComponent>
         <>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
@@ -23,7 +29,7 @@ const App = () => {
           </p>
           <button>push me</button>
         </>
-      </MyThirdComponent>
+      </MyThirdComponent> */}
     </div>
   );
 };

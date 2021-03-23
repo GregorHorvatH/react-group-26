@@ -1,0 +1,36 @@
+.shop {
+  display: flex;
+  flex-direction: column;
+}
+
+.body {
+  display: flex;
+}
+
+.menu {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  border: 1px solid black;
+  display: flex;
+  flex: 1;
+}
+
+.header {
+  border: 1px solid black;
+  display: flex;
+  flex: 1;
+}
+
+.footer {
+  border: 1px solid black;
+  display: flex;
+  flex: 1;
+}
+
+.item img {
+  width: 200px;
+}
