@@ -6,7 +6,7 @@ const products = [
     name: 'phone 1',
     price: 5000,
     count: 10,
-    img: 'phone',
+    img: 'phone1',
   },
   {
     id: 2,
