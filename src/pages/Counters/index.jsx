@@ -19,7 +19,7 @@ const Counters = () => {
 
   // component did update - always after render
   useEffect(() => {
-    console.log('render');
+    // console.log('render');
   });
 
   const addCounter = () =>

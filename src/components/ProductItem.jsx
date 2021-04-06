@@ -31,6 +31,8 @@ const ProductItem = ({ product }) => {
   const x = 15;
   const classes = useStyles(x);
 
+  console.log('item render:', product.id);
+
   return (
     <li className={classes.item}>
       <CardActionArea>
