@@ -45,15 +45,15 @@ const ProductForm = ({ onSubmit }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const hasEmptyField = Object.values(state).some((item) => !item);
-    if (hasEmptyField) {
-      setError('Fields are required');
+    // const hasEmptyField = Object.values(state).some((item) => !item);
+    // if (hasEmptyField) {
+    //   setError('Fields are required');
 
-      return;
-    }
+    //   return;
+    // }
 
     const newItem = {
-      id: Date.now(), // uuid
+      // id: Date.now(), // uuid
       name,
       price: Number(price),
       count: Number(count),

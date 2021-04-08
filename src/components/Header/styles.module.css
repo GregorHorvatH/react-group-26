@@ -2,4 +2,6 @@
   border: 1px solid black;
   display: flex;
   flex: 1;
+  justify-content: space-around;
+  align-items: center;
 }

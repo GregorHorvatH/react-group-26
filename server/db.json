@@ -1,0 +1,31 @@
+{
+  "products": [
+    {
+      "name": "photoshop",
+      "price": 11,
+      "count": 33,
+      "color": "gray",
+      "insurance": false,
+      "software": false,
+      "img": "notebook",
+      "id": 2
+    },
+    {
+      "name": "Test Name",
+      "price": 23,
+      "count": 55,
+      "color": "white",
+      "insurance": false,
+      "software": false,
+      "img": "phone",
+      "id": 3
+    }
+  ],
+  "cart": [
+    {
+      "id": 1,
+      "productId": 3,
+      "count": 1
+    }
+  ]
+}
