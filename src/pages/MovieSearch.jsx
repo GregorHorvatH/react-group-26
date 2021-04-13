@@ -1,16 +1,35 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
+import { Link, useLocation, useHistory } from 'react-router-dom';
 import _ from 'lodash';
-import { search } from '../utils/moviesApi';
+import queryString from 'query-string';
+import { searchMovies } from '../utils/moviesApi';
 
 const MovieSearch = () => {
-  const [query, setQuery] = useState('');
-  const [movieList, setMovieList] = useState([]);
+  const location = useLocation();
+  const { pathname, search } = location;
+  const initialQueryState = queryString.parse(search); // parse(search)
 
-  const handleChange = (e) => setQuery(e.target.value);
+  const { push } = useHistory();
+  const [query, setQuery] = useState(initialQueryState.query || '');
+  const [movieList, setMovieList] = useState([]);
+  const inputRef = useRef();
+
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []); // eslint-disable-line
+
+  const handleChange = (e) => {
+    setQuery(e.target.value);
+    push({
+      ...location,
+      search: `?query=${e.target.value}`,
+    });
+  };
 
   const movieSearch = useCallback(
     _.debounce(
-      (query) => search(query).then(({ results }) => setMovieList(results)),
+      (query) =>
+        searchMovies(query).then(({ results }) => setMovieList(results)),
       300,
     ),
     [],
@@ -24,11 +43,22 @@ const MovieSearch = () => {
 
   return (
     <div className="movie-search">
-      <input type="text" value={query} onChange={handleChange} />
+      <input type="text" value={query} ref={inputRef} onChange={handleChange} />
 
       <ul>
         {movieList.map(({ id, original_title }) => (
-          <li key={id}>{original_title}</li>
+          <li key={id}>
+            <Link
+              to={{
+                pathname: `${pathname}/${id}`,
+                state: {
+                  query,
+                },
+              }}
+            >
+              {original_title}
+            </Link>
+          </li>
         ))}
       </ul>
     </div>

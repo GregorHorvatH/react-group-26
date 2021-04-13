@@ -1,18 +1,41 @@
-import Contacts from '../pages/Contacts';
-import Products from '../pages/Products';
-import Counters from '../pages/Counters';
-import LifeCycleTest from '../pages/LifeCycleTest';
-import MovieSearch from '../pages/MovieSearch';
+import { lazy } from 'react';
 
-/* <a href="/products">Products</a>
-<a href="/products/3456">Product Detail</a>
-<a href="/cart">Cart</a>
-<a href="/order">Order</a>
-<a href="/profile">Profile</a>
-<a href="/contacts">Contacts</a>
-<a href="/counters">Counters</a> */
+// import HomePage from '../pages/HomePage';
+// import Contacts from '../pages/Contacts';
+// import Products from '../pages/Products';
+// import Counters from '../pages/Counters';
+// import LifeCycleTest from '../pages/LifeCycleTest';
+// import MovieSearch from '../pages/MovieSearch';
+
+const HomePage = lazy(() =>
+  import('../pages/HomePage' /* webpackChunkName: "HomePage" */),
+);
+const Contacts = lazy(() =>
+  import('../pages/Contacts' /* webpackChunkName: "Contacts" */),
+);
+const Products = lazy(() =>
+  import('../pages/Products' /* webpackChunkName: "Products" */),
+);
+const Counters = lazy(() =>
+  import('../pages/Counters' /* webpackChunkName: "Counters" */),
+);
+const LifeCycleTest = lazy(() =>
+  import('../pages/LifeCycleTest' /* webpackChunkName: "LifeCycleTest" */),
+);
+const MovieSearch = lazy(() =>
+  import('../pages/MovieSearch' /* webpackChunkName: "MovieSearch" */),
+);
+const MovieDetails = lazy(() =>
+  import('../pages/MovieDetails' /* webpackChunkName: "MovieDetails" */),
+);
 
 export const routes = [
+  {
+    path: '/',
+    label: 'Home Page',
+    component: HomePage,
+    exact: true,
+  },
   {
     path: '/products',
     label: 'Products',
@@ -34,8 +57,14 @@ export const routes = [
     component: LifeCycleTest,
   },
   {
+    path: '/MovieSearch/:id',
+    label: 'Movie Details',
+    component: MovieDetails,
+  },
+  {
     path: '/MovieSearch',
     label: 'Movie Search',
     component: MovieSearch,
+    exact: true,
   },
 ];
