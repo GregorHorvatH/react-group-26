@@ -1,6 +1,5 @@
 import axios from 'axios';
-
-const apiKey = 'd05f5f872f0f74667bcdb4179984cab2';
+import { apiKey } from './apikey';
 
 export const searchMovies = (query) =>
   axios
