@@ -9,7 +9,7 @@ const Content = () => {
       <Suspense fallback={<p>Loading...</p>}>
         <Switch>
           {routes.map(({ path, exact, component: Component }) => (
-            <Route path={path} exact={exact} component={Component} />
+            <Route key={path} path={path} exact={exact} component={Component} />
           ))}
 
           <Route component={Page404} />

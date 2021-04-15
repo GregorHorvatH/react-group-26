@@ -28,6 +28,12 @@ const MovieSearch = lazy(() =>
 const MovieDetails = lazy(() =>
   import('../pages/MovieDetails' /* webpackChunkName: "MovieDetails" */),
 );
+const HocPage = lazy(() =>
+  import('../pages/HocPage' /* webpackChunkName: "HocPage" */),
+);
+const ContextDemo = lazy(() =>
+  import('../pages/ContextDemo' /* webpackChunkName: "ContextDemo" */),
+);
 
 export const routes = [
   {
@@ -35,26 +41,31 @@ export const routes = [
     label: 'Home Page',
     component: HomePage,
     exact: true,
+    showInMenu: true,
   },
   {
     path: '/products',
     label: 'Products',
     component: Products,
+    showInMenu: true,
   },
   {
     path: '/contacts',
     label: 'Contacts',
     component: Contacts,
+    showInMenu: true,
   },
   {
     path: '/counters',
     label: 'Counters',
     component: Counters,
+    showInMenu: true,
   },
   {
     path: '/life-cycle-test',
     label: 'Life-cycle-test',
     component: LifeCycleTest,
+    showInMenu: true,
   },
   {
     path: '/MovieSearch/:id',
@@ -66,5 +77,20 @@ export const routes = [
     label: 'Movie Search',
     component: MovieSearch,
     exact: true,
+    showInMenu: true,
+  },
+  {
+    path: '/hoc',
+    label: 'Hoc Demo',
+    component: HocPage,
+    exact: true,
+    showInMenu: true,
+  },
+  {
+    path: '/context',
+    label: 'Context Demo',
+    component: ContextDemo,
+    exact: true,
+    showInMenu: true,
   },
 ];
