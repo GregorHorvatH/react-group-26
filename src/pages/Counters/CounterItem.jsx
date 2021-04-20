@@ -14,11 +14,11 @@ const CounterItem = React.memo(
     const handleIncrement = () => onIncrement(counter.id);
     const handleDelete = () => onDelete(counter.id);
 
-    console.log('render:', counter.id);
+    // console.log('render:', counter.id);
 
-    if (counter.value > 10) {
-      throw new Error('boooom');
-    }
+    // if (counter.value > 10) {
+    //   throw new Error('boooom');
+    // }
 
     return (
       <li className="counter-item">

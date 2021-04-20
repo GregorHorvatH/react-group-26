@@ -34,6 +34,9 @@ const HocPage = lazy(() =>
 const ContextDemo = lazy(() =>
   import('../pages/ContextDemo' /* webpackChunkName: "ContextDemo" */),
 );
+const Todos = lazy(() =>
+  import('../pages/Todos' /* webpackChunkName: "Todos" */),
+);
 
 export const routes = [
   {
@@ -90,6 +93,13 @@ export const routes = [
     path: '/context',
     label: 'Context Demo',
     component: ContextDemo,
+    exact: true,
+    showInMenu: true,
+  },
+  {
+    path: '/todos',
+    label: 'Todos',
+    component: Todos,
     exact: true,
     showInMenu: true,
   },

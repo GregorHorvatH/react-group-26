@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import CounterList from './CounterList';
 import SingleCounter from './SingleCounter';
+import SingleCounterRedux from './SingleCounterRedux';
 
 const Counters = () => {
   const [counters, setCounters] = useState([]);
@@ -63,16 +64,17 @@ const Counters = () => {
   return (
     <div className="counters">
       <h2>Counters</h2>
-      <SingleCounter initialValue={555} />
+      <SingleCounterRedux />
+      {/* <SingleCounter initialValue={555} /> */}
 
-      <button onClick={addCounter}>+ Add counter</button>
+      {/* <button onClick={addCounter}>+ Add counter</button>
 
       <CounterList
         counters={counters}
         onIncrement={handleIncrement}
         onDecrement={handleDecrement}
         onDelete={handleDeleteCounter}
-      />
+      /> */}
     </div>
   );
 };
