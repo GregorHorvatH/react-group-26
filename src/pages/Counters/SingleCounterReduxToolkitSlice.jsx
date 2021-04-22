@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import SingleCounter from './SingleCounter';
-import * as actions from '../../redux/counter/actions';
+import * as actions from '../../redux/counterToolkitSlice';
 
-const mapStateToProps = ({ counter: { value, step } }) => ({
+const mapStateToProps = ({ counterToolkitSlice: { value, step } }) => ({
   value,
   step,
 });

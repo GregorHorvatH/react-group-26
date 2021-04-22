@@ -10,7 +10,7 @@ export const onIncrement = (payload) => ({
   payload,
 });
 
-export const onChangeStep = (payload) => ({
+export const onSetStep = (payload) => ({
   type: types.SET_STEP,
   payload,
 });

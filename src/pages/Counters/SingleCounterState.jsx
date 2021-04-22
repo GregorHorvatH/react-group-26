@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles({
@@ -15,18 +15,26 @@ const useStyles = createUseStyles({
   },
 });
 
-const SingleCounter = ({
-  value,
-  step,
-  onSetStep,
-  onDecrement,
-  onIncrement,
-}) => {
-  const classes = useStyles();
+const limit = 500;
 
-  const handleChangeStep = (e) => onSetStep(Number(e.target.value));
-  const handleDecrement = () => onDecrement(step);
-  const handleIncrement = () => onIncrement(step);
+const SingleCounter = ({ initialValue = 0 }) => {
+  const classes = useStyles();
+  const [value, setValue] = useState(initialValue);
+  const [step, setStep] = useState(1);
+
+  const handleDecrement = () =>
+    setValue((prevState) => (prevState - step < 0 ? 0 : prevState - step));
+
+  const handleIncrement = () =>
+    setValue((prevState) =>
+      prevState + step > limit ? limit : prevState + step,
+    );
+
+  const handleChangeStep = (e) => setStep(Number(e.target.value));
+
+  useEffect(() => {
+    console.log('value:', value);
+  }, [value]);
 
   return (
     <div className={classes.counter}>
