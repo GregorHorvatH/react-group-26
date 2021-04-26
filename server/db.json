@@ -27,5 +27,37 @@
       "productId": 3,
       "count": 1
     }
+  ],
+  "todos": [
+    {
+      "id": 1619456581971,
+      "text": "do something - first todo",
+      "created": 1619456581971,
+      "isDone": true
+    },
+    {
+      "text": "second todo",
+      "created": 1619459477051,
+      "isDone": false,
+      "id": 1619456581972
+    },
+    {
+      "text": "sdfadfafd",
+      "created": 1619459514518,
+      "isDone": false,
+      "id": 1619456581973
+    },
+    {
+      "text": "dfg",
+      "created": 1619459601278,
+      "isDone": false,
+      "id": 1619456581974
+    },
+    {
+      "text": "dfghj",
+      "created": 1619459701749,
+      "isDone": false,
+      "id": 1619456581975
+    }
   ]
 }

@@ -1,15 +1,22 @@
 import moment from 'moment';
 import { useSelector, useDispatch } from 'react-redux';
-import { toggleTodo, deleteTodo } from '../../redux/todos/actions';
+import { toggleTodo, deleteTodo } from '../../redux/todos/operations';
 
 const getTodoItem = (id) => (state) =>
   state.todos.items.find((todo) => todo.id === id);
 
 const TodoItem = ({ id }) => {
   const dispatch = useDispatch();
-  const { text, created, isDone } = useSelector(getTodoItem(id));
+  const todo = useSelector(getTodoItem(id));
+  const { text, created, isDone } = todo;
 
-  const handleToggle = () => dispatch(toggleTodo(id));
+  const handleToggle = () =>
+    dispatch(
+      toggleTodo({
+        ...todo,
+        isDone: !isDone,
+      }),
+    );
   const handleDelete = () => dispatch(deleteTodo(id));
 
   return (

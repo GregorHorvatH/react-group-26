@@ -11,6 +11,17 @@ import {
 
 import reducer from './rootReducer';
 
+// const thunk = ({ dispatch, getState }) => (next) => (action) =>
+//   typeof action === 'function' ? action(dispatch, getState) : next(action);
+
+// const loggerMiddleware = (store) => (next) => (action) => {
+//   console.group(action.type);
+//   console.info('dispatching', action);
+//   console.groupEnd(action.type);
+
+//   return next(action);
+// };
+
 export const store = configureStore({
   reducer,
   middleware: getDefaultMiddleware({

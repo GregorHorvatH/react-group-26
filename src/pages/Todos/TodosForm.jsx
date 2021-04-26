@@ -1,9 +1,12 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { addTodo } from '../../redux/todos/actions';
+import { useDispatch, useSelector } from 'react-redux';
+// import { addTodo } from '../../redux/todos/actions';
+import { addTodo } from '../../redux/todos/operations';
+import { getIsLoading } from '../../redux/todos/selectors';
 
 const TodosForm = () => {
   const dispatch = useDispatch();
+  const isLoading = useSelector(getIsLoading);
   const [value, setValue] = useState('');
 
   const handleChange = (e) => setValue(e.target.value);
@@ -12,7 +15,7 @@ const TodosForm = () => {
     e.preventDefault();
 
     const newTodo = {
-      id: Date.now(),
+      // id: Date.now(),
       text: value,
       created: Date.now(),
       isDone: false,
@@ -26,8 +29,15 @@ const TodosForm = () => {
     <form className="todos-form" onSubmit={handleSubmit}>
       <fieldset>
         <legend>create new todo</legend>
-        <input type="text" value={value} onChange={handleChange} />
-        <button type="submit">+ Add Todo</button>
+        <input
+          type="text"
+          value={value}
+          disabled={isLoading}
+          onChange={handleChange}
+        />
+        <button type="submit" disabled={isLoading}>
+          + Add Todo
+        </button>
       </fieldset>
     </form>
   );
