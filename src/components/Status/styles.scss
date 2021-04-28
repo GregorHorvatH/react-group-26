@@ -1,0 +1,19 @@
+.status {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 0 10px;
+  background-color: #4b4a67;
+  color: #fff;
+  width: 200px;
+
+  .title {
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .subtitle {
+    border-top: 1px solid #fff;
+    padding-top: 10px;
+  }
+}

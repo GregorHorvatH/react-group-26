@@ -1,63 +1,32 @@
 {
-  "products": [
-    {
-      "name": "photoshop",
-      "price": 11,
-      "count": 33,
-      "color": "gray",
-      "insurance": false,
-      "software": false,
-      "img": "notebooksdfghm",
-      "id": 2
-    },
-    {
-      "name": "Test Name",
-      "price": 23,
-      "count": 55,
-      "color": "white",
-      "insurance": false,
-      "software": false,
-      "img": "phone",
-      "id": 3
-    }
-  ],
-  "cart": [
-    {
-      "id": 1,
-      "productId": 3,
-      "count": 1
-    }
-  ],
   "todos": [
     {
-      "id": 1619456581971,
-      "text": "do something - first todo",
-      "created": 1619456581971,
+      "color": "#DDD1C7",
+      "text": "item 1",
+      "id": 6,
       "isDone": true
     },
     {
-      "text": "second todo",
-      "created": 1619459477051,
-      "isDone": false,
-      "id": 1619456581972
+      "color": "#8DB580",
+      "text": "item 2",
+      "id": 7,
+      "isDone": false
     },
     {
-      "text": "sdfadfafd",
-      "created": 1619459514518,
-      "isDone": false,
-      "id": 1619456581973
+      "color": "#C2CFB2",
+      "text": "item 3",
+      "id": 8,
+      "isDone": true
     },
     {
-      "text": "dfg",
-      "created": 1619459601278,
-      "isDone": false,
-      "id": 1619456581974
-    },
-    {
-      "text": "dfghj",
-      "created": 1619459701749,
-      "isDone": false,
-      "id": 1619456581975
+      "color": "#8DB580",
+      "text": "asdff",
+      "id": 9,
+      "isDone": true
     }
-  ]
+  ],
+  "settings": {
+    "theme": "light",
+    "background": "cats"
+  }
 }

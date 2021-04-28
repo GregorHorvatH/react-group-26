@@ -1,0 +1,12 @@
+.todos {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid black;
+  width: 280px;
+  padding: 0 10px;
+  background-color: #f7f5f2;
+
+  .title {
+    text-align: center;
+  }
+}

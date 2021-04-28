@@ -1,0 +1,16 @@
+.filters {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+
+  .button {
+    margin: 0 5px;
+  }
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+}
