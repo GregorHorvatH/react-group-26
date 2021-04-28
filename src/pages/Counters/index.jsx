@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import CounterList from './CounterList';
-import SingleCounter from './SingleCounter';
+// import CounterList from './CounterList';
+// import SingleCounter from './SingleCounter';
 import SingleCounterRedux from './SingleCounterRedux';
 import SingleCounterReduxToolkit from './SingleCounterReduxToolkit';
 import SingleCounterReduxToolkitSlice from './SingleCounterReduxToolkitSlice';
@@ -21,47 +21,47 @@ const Counters = () => {
   }, [counters]);
 
   // component did update - always after render
-  useEffect(() => {
-    // console.log('render');
-  });
+  // useEffect(() => {
+  // console.log('render');
+  // });
 
-  const addCounter = () =>
-    setCounters((prevState) => [
-      ...prevState,
-      {
-        id: Date.now(),
-        value: 0,
-      },
-    ]);
+  // const addCounter = () =>
+  //   setCounters((prevState) => [
+  //     ...prevState,
+  //     {
+  //       id: Date.now(),
+  //       value: 0,
+  //     },
+  //   ]);
 
-  const handleIncrement = (id) =>
-    setCounters((prevState) =>
-      prevState.map((counter) =>
-        counter.id === id
-          ? {
-              ...counter,
-              value: counter.value + 1,
-            }
-          : counter,
-      ),
-    );
+  // const handleIncrement = (id) =>
+  //   setCounters((prevState) =>
+  //     prevState.map((counter) =>
+  //       counter.id === id
+  //         ? {
+  //             ...counter,
+  //             value: counter.value + 1,
+  //           }
+  //         : counter,
+  //     ),
+  //   );
 
-  const handleDecrement = (id) =>
-    setCounters((prevState) =>
-      prevState.map((counter) =>
-        counter.id === id
-          ? {
-              ...counter,
-              value: counter.value - 1,
-            }
-          : counter,
-      ),
-    );
+  // const handleDecrement = (id) =>
+  //   setCounters((prevState) =>
+  //     prevState.map((counter) =>
+  //       counter.id === id
+  //         ? {
+  //             ...counter,
+  //             value: counter.value - 1,
+  //           }
+  //         : counter,
+  //     ),
+  //   );
 
-  const handleDeleteCounter = (id) =>
-    setCounters((prevState) =>
-      prevState.filter((counter) => counter.id !== id),
-    );
+  // const handleDeleteCounter = (id) =>
+  //   setCounters((prevState) =>
+  //     prevState.filter((counter) => counter.id !== id),
+  //   );
 
   return (
     <div className="counters">

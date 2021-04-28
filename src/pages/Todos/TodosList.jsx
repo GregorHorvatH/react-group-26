@@ -6,6 +6,8 @@ const getTodos = (state) => state.todos.items;
 const TodosList = () => {
   const todos = useSelector(getTodos);
 
+  console.log('render todos list');
+
   return (
     <ul className="todos-list">
       {todos.map(({ id }) => (

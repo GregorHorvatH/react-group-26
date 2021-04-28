@@ -28,6 +28,8 @@ const SingleCounter = ({
   const handleDecrement = () => onDecrement(step);
   const handleIncrement = () => onIncrement(step);
 
+  console.log('render counter');
+
   return (
     <div className={classes.counter}>
       <h4>Single Counter</h4>

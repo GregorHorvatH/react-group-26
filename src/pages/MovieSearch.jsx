@@ -26,6 +26,7 @@ const MovieSearch = () => {
     });
   };
 
+  // eslint-disable-next-line
   const movieSearch = useCallback(
     _.debounce(
       (query) =>

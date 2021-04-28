@@ -5,7 +5,7 @@ const withLog = (WrappedComponent) => (props) => {
     console.group(`WithLog ouput @${WrappedComponent.name}`);
     console.log(props);
     console.groupEnd();
-  }, []);
+  }, []); // eslint-disable-line
 
   return <WrappedComponent {...props} />;
 };
