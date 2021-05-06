@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { connect } from 'react-redux';
 // import * as todosActions from '../../../redux/todosActions';
 import { addTodo } from '../../../redux/todosAPI';
@@ -9,6 +9,7 @@ const getColor = () => ['#DDD1C7', '#C2CFB2', '#8DB580'][~~(Math.random() * 3)];
 
 const InputForm = ({ onSubmit }) => {
   const [value, setValue] = useState('');
+  const inputRef = useRef(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,12 +21,17 @@ const InputForm = ({ onSubmit }) => {
     setValue('');
   };
 
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
+
   return (
     <form className="input-form" onSubmit={handleSubmit}>
       <input
         className="input"
         type="text"
         value={value}
+        ref={inputRef}
         onChange={(e) => setValue(e.target.value)}
       />
       <button className="button">+ Add</button>
