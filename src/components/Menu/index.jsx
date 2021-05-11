@@ -1,3 +1,4 @@
+import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { createUseStyles } from 'react-jss';
 import { routes } from '../routes';
@@ -11,13 +12,14 @@ const useStyles = createUseStyles({
 
 const Menu = () => {
   const classes = useStyles();
+  const isLoggedOn = useSelector((state) => state.user.isLoggedOn);
 
   return (
     <div className="menu">
       <p>menu</p>
 
-      {routes.map(({ path, exact, showInMenu, label }) =>
-        showInMenu ? (
+      {routes.map(({ path, exact, showInMenu, label, isProtected }) =>
+        showInMenu && (!isProtected || (isProtected && isLoggedOn)) ? (
           <NavLink
             activeClassName={classes.active}
             key={path}
@@ -28,9 +30,6 @@ const Menu = () => {
           </NavLink>
         ) : null,
       )}
-
-      {/* <Link to="/products">Products</Link>
-      <Link to="/contacts">Contacts</Link> */}
     </div>
   );
 };

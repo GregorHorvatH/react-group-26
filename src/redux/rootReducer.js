@@ -6,17 +6,27 @@ import counter from './counter/reducer';
 import counterToolkit from './counterToolkit/reducer';
 import counterToolkitSlice from './counterToolkitSlice';
 import todos from './todos/reducer';
+import user from './user';
 
-const persistConfig = {
+const todosPersistConfig = {
   key: 'todos',
   storage,
 };
 
-const todosReducer = persistReducer(persistConfig, todos);
+const todosReducer = persistReducer(todosPersistConfig, todos);
+
+const tokenPersistConfig = {
+  key: 'token',
+  storage,
+  whitelist: ['token'],
+};
+
+const userReducer = persistReducer(tokenPersistConfig, user);
 
 export default combineReducers({
   counter,
   counterToolkit,
   counterToolkitSlice,
   todos: todosReducer,
+  user: userReducer,
 });

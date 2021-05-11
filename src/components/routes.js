@@ -37,6 +37,9 @@ const ContextDemo = lazy(() =>
 const Todos = lazy(() =>
   import('../pages/Todos' /* webpackChunkName: "Todos" */),
 );
+const Login = lazy(() =>
+  import('../pages/LoginPage' /* webpackChunkName: "Login" */),
+);
 
 export const routes = [
   {
@@ -45,35 +48,41 @@ export const routes = [
     component: HomePage,
     exact: true,
     showInMenu: true,
+    isProtected: false,
   },
   {
     path: '/products',
     label: 'Products',
     component: Products,
     showInMenu: true,
+    isProtected: true,
   },
   {
     path: '/contacts',
     label: 'Contacts',
     component: Contacts,
     showInMenu: true,
+    isProtected: true,
   },
   {
     path: '/counters',
     label: 'Counters',
     component: Counters,
     showInMenu: true,
+    isProtected: true,
   },
   {
     path: '/life-cycle-test',
     label: 'Life-cycle-test',
     component: LifeCycleTest,
     showInMenu: true,
+    isProtected: true,
   },
   {
     path: '/MovieSearch/:id',
     label: 'Movie Details',
     component: MovieDetails,
+    isProtected: true,
   },
   {
     path: '/MovieSearch',
@@ -81,6 +90,7 @@ export const routes = [
     component: MovieSearch,
     exact: true,
     showInMenu: true,
+    isProtected: true,
   },
   {
     path: '/hoc',
@@ -88,6 +98,7 @@ export const routes = [
     component: HocPage,
     exact: true,
     showInMenu: true,
+    isProtected: true,
   },
   {
     path: '/context',
@@ -95,6 +106,7 @@ export const routes = [
     component: ContextDemo,
     exact: true,
     showInMenu: true,
+    isProtected: true,
   },
   {
     path: '/todos',
@@ -102,5 +114,14 @@ export const routes = [
     component: Todos,
     exact: true,
     showInMenu: true,
+    isProtected: true,
+  },
+  {
+    path: '/login',
+    label: 'Login',
+    component: Login,
+    exact: true,
+    showInMenu: true,
+    isProtected: false,
   },
 ];
