@@ -6,6 +6,7 @@ const initialState = {
   token: '',
   isLoggedOn: false,
   isLoading: false,
+  isAuthorizing: true,
   error: '',
 };
 
@@ -33,19 +34,33 @@ const { actions, reducer } = createSlice({
       state.isLoading = true;
     },
     onLogoutSuccess: (state) => {
-      state = initialState;
+      state.token = '';
+      state.name = '';
+      state.email = '';
+      state.isLoggedOn = false;
       state.isLoading = false;
     },
     onLogoutFailure: (state, action) => {
-      state.error = action.payload.message;
+      state.error = action.payload;
       state.isLoading = false;
     },
 
-    onGetUser: (state, action) => {
-      state.name = action.payload.user.name;
-      state.email = action.payload.user.email;
+    onGetUserRequest: (state) => {
+      state.isAuthorizing = true;
+    },
+    onGetUserSuccess: (state, action) => {
+      state.name = action.payload.name;
+      state.email = action.payload.email;
       state.isLoggedOn = true;
-      state.isLoading = false;
+      state.isAuthorizing = false;
+    },
+    onGetUserFailure: (state) => {
+      state.token = '';
+      state.isLoggedOn = false;
+      state.isAuthorizing = false;
+    },
+    onGetUserCancel: (state) => {
+      state.isAuthorizing = false;
     },
   },
 });
@@ -59,7 +74,10 @@ export const {
   onLogoutSuccess,
   onLogoutFailure,
 
-  onGetUser,
+  onGetUserRequest,
+  onGetUserSuccess,
+  onGetUserFailure,
+  onGetUserCancel,
 } = actions;
 
 export default reducer;
