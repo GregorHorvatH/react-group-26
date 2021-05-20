@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SingleCounter snapshot test 1`] = `
+<div>
+  <div
+    class="counter-0-2-1"
+  >
+    <h4>
+      Single Counter
+    </h4>
+    <label>
+      <span>
+        step
+      </span>
+      <select>
+        <option
+          value="1"
+        >
+          1
+        </option>
+        <option
+          value="5"
+        >
+          5
+        </option>
+        <option
+          value="10"
+        >
+          10
+        </option>
+        <option
+          value="25"
+        >
+          25
+        </option>
+        <option
+          value="50"
+        >
+          50
+        </option>
+      </select>
+    </label>
+    <div
+      class="buttons-0-2-2"
+    >
+      <button
+        class="button-0-2-3"
+      >
+        -
+      </button>
+      <p
+        data-testid="value"
+      >
+        333
+      </p>
+      <button
+        class="button-0-2-3"
+        data-testid="increment-button"
+      >
+        +
+      </button>
+    </div>
+    <hr />
+  </div>
+</div>
+`;
